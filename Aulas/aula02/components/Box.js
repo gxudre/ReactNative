@@ -1,0 +1,24 @@
+//hook useState
+import { useState } from 'react';
+
+import { View } from 'react-native';
+
+// componente
+
+const Box = (props) => {
+  const [state, setState] = useState(false);
+
+  console.log(props, state);
+
+  // estilo inline
+  const boxStyle = {
+    height: props.size,
+    minWidth: props.size,
+    //flex: props.size,
+    backgroundColor: props.color,
+  };
+
+  return <View style={boxStyle}></View>;
+};
+
+export default Box;
