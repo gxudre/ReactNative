@@ -3,7 +3,7 @@ import { View, Image } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 import Titulo from '../components/Titulo';
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
 
@@ -36,7 +36,7 @@ const Login = () => {
         onChangeText={(text) => setSenha(text)}
         contentStyle={{borderRadius:20}}
       />
-      <Button onPress={handleEntrar}>Entrar</Button>
+      <Button onPress={props.onLogin}>Entrar</Button>
     </View>
   );
 };

@@ -1,13 +1,15 @@
 import {View} from 'react-native'
 import { Appbar } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/Ionicons'
+import {Ionicons} from '@expo/vector-icons'
 
 
-const Home = () => {
+const Home = (props) => {
   return<View style={{ flex:1, backgroundColor: '1E1E1E'}}>
     <Appbar.Header>
       <Appbar.Content title='Catálogo' />
-      <Appbar.Action icon="exit-outline" onPress={() => {}} />
+      <Appbar.Action icon={() => <Ionicons name="exit-outline" size={24} color={"white"} />}
+        onPress={props.onLogout}
+       />
     </Appbar.Header>
   </View>
 }

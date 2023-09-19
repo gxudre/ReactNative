@@ -6,12 +6,22 @@ import Home from "./screens/Home"
 
 const App = () => {
   const [exibeSplash, setExibeSplash] = useState(true);
+  const [logado, setLogado] = useState(false);
+
+  handleLogin = () => {
+    setLogado(true)
+  }
+
+  handleLogout = () => {
+    setLogado(false)
+  }
+
 
   useEffect(()=>{
     setTimeout(()=>setExibeSplash(false),3000)
   },[])
 
-  return exibeSplash ? <Splash/> : <Login/>;
+  return exibeSplash ? <Splash/> : logado ? (<Home onLogout={handleLogout}/>) : ( <Login onLogin={handleLogin}/>);
 }
 
 export default App
